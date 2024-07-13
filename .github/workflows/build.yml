@@ -3,19 +3,19 @@ name: build-ublue-custom
 on:
   pull_request:
     branches:
-      - main
+      - asus
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
     branches:
-      - main
+      - asus
     paths-ignore:
       - '**/README.md'
   workflow_dispatch:
 
 env:
-  MY_IMAGE_NAME: "${{ github.event.repository.name }}"  # the name of the image produced by this build, matches repo names
-  MY_IMAGE_DESC: "My Customized Universal Blue Image"
+  MY_IMAGE_NAME: "${{ github.event.repository.name }}-asus"  # the name of the image produced by this build, matches repo names
+  MY_IMAGE_DESC: "My Customized Universal Blue Image, for Asus laptops"
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
 
 jobs:
