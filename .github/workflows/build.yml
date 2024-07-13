@@ -3,12 +3,12 @@ name: build-ublue-custom
 on:
   pull_request:
     branches:
-      - asus
+      - main
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
     branches:
-      - asus
+      - main
     paths-ignore:
       - '**/README.md'
   workflow_dispatch:
