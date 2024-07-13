@@ -1,5 +1,5 @@
 ---
-name: build-ublue-custom
+name: build-ublue-custom-asus
 on:
   pull_request:
     branches:
