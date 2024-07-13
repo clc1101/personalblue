@@ -2,8 +2,8 @@ ARG SOURCE_IMAGE="silverblue"
 ARG SOURCE_SUFFIX="-asus"
 ARG SOURCE_TAG="40"
 ARG FEDORA_MAJOR_VERSION=40
-FROM ghcr.io/ublue-os/fsync-kernel:40-6.9.8
-FROM ghcr.io/ublue-os/akmods-nvidia:fsync-40
+FROM ghcr.io/ublue-os/fsync-kernel:${FEDORA_MAJOR_VERSION}-6.9.8
+FROM ghcr.io/ublue-os/akmods-nvidia:fsync-${FEDORA_MAJOR_VERSION}
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 COPY rootfs/ /
