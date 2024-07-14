@@ -52,5 +52,6 @@ RUN rpm-ostree install \
     neofetch \
     grub-customizer \
     gnome-tweaks \
-    distrobox && \
+    distrobox \
+    yt-dlp && \
     ostree container commit
