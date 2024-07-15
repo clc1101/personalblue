@@ -57,4 +57,10 @@ RUN rpm-ostree install \
     svt-av1 \
     svt-vp9 \
     gstreamer1-vaapi && \
+    rpm-ostree override replace \
+    --experimental \
+    --from repo=updates \
+        gstreamer1 \
+        gstreamer1-plugins-base \
+        || true && \
     ostree container commit
