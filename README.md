@@ -26,5 +26,7 @@ To fully utilize hardware video acceleration on Firefox, set the following setti
 
 Note: By default, only the intel encoders/decoders are utilized in this build.
 
+
 Apologies in advance if this is poorly put together. I'm an artist, not a programmer.
+
 TODO: Find a better way to install extensions
