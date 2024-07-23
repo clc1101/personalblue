@@ -41,6 +41,7 @@ RUN curl -Lo /tmp/nvidia-install.sh https://raw.githubusercontent.com/ublue-os/h
 COPY build.sh /tmp/build.sh
 RUN tmp/build.sh && \
     mkdir -p /var/lib/alternatives && \
+    curl -Lo /usr/lib/sysctl.d/99-bore-scheduler.conf https://github.com/CachyOS/CachyOS-Settings/raw/master/usr/lib/sysctl.d/99-bore-scheduler.conf && \
     ostree container commit
 
 # Install custom themes/extensions
