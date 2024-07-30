@@ -68,6 +68,7 @@ RUN rpm-ostree install \
     svt-vp9 \
     gstreamer1-vaapi \
     i2c-tools && \
+    fprintd && \
     rpm-ostree override replace \
     --experimental \
     --from repo=updates \
@@ -76,3 +77,4 @@ RUN rpm-ostree install \
         || true && \
     ostree container commit
 RUN systemctl enable logid.service
+    ostree container commit
