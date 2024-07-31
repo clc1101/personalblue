@@ -2,7 +2,7 @@
 
 This is just a tiny little attempt at creating a version of Fedora Silverblue that's for the most part tailored towards my own needs. It uses Universal Blue as a base, and contains some included packages, Nvidia drivers and fsync kernel.
 
-For secure boot support, enroll Ublue's MOK keys.
+For secure boot support, do 'ujust enroll-secure-boot-key'.
 
 - First, rebase with unsigned image:
 
@@ -23,8 +23,6 @@ For secure boot support, enroll Ublue's MOK keys.
 To fully utilize hardware video acceleration on Firefox, set the following setting in about:config
 
 - media.ffmpeg.vaapi.enabled=true
-- media.rdd-ffmpeg.enabled=true
-- gfx.x11-egl.force-enabled=true
 
 
 Apologies in advance if this is poorly put together. I'm an artist, not a programmer.
