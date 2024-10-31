@@ -64,3 +64,9 @@ COPY scripts/cmnpkgs.sh /tmp/cmnpkgs.sh
 RUN chmod +x /tmp/cmnpkgs.sh && \
     /tmp/cmnpkgs.sh && \
     ostree container commit
+
+# Goodix fingerprint scanner (disabled because lacking copr for 41)
+RUN rpm-ostree override replace --experimental --freeze --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod && \
+    rpm-ostree override remove libfprint && \
+    rpm-ostree install libfprint-tod-goodix && \
+    ostree container commit
