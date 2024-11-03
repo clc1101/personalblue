@@ -38,12 +38,12 @@ RUN rpm-ostree override remove \
     fprintd-pam && \
     ostree container commit
     
-"RUN rpm-ostree override replace \
-"    --experimental \
-"        /tmp/rpms/libfprint-tod-1.94.5-2.fc41.x86_64.rpm && \
-"    rpm-ostree override remove libfprint && \
-"    rpm-ostree install /tmp/rpms/libfprint-tod-goodix-0.0.9-1.x86_64.rpm && \
-"    ostree container commit
+#RUN rpm-ostree override replace \
+#    --experimental \
+#        /tmp/rpms/libfprint-tod-1.94.5-2.fc41.x86_64.rpm && \
+#    rpm-ostree override remove libfprint && \
+#    rpm-ostree install /tmp/rpms/libfprint-tod-goodix-0.0.9-1.x86_64.rpm && \
+#    ostree container commit
 
 # Goodix fingerprint scanner (disabled because lacking copr for 41)
 #RUN rpm-ostree override replace --experimental --freeze --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod && \
