@@ -15,8 +15,7 @@ xcb-util-cursor \
 i2c-tools \
 alacarte \
 libnsl \
-podman \
-xpadneo-kmod
+podman
 
 # Pop in Valve's patched stuff
 rpm-ostree override replace --experimental \
