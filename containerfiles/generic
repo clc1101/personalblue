@@ -24,32 +24,6 @@ RUN curl -Lo /usr/bin/copr https://raw.githubusercontent.com/ublue-os/COPR-comma
     curl -Lo /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-"${FEDORA_MAJOR_VERSION}"/kylegospo-bazzite-multilib-fedora-"${FEDORA_MAJOR_VERSION}".repo && \
     curl -Lo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9.repo https://copr.fedorainfracloud.org/coprs/antiderivative/libfprint-tod-goodix-0.0.9/repo/fedora-40/antiderivative-libfprint-tod-goodix-0.0.9-fedora-40.repo && \
     ostree container commit
-    
-COPY sysfiles/rpms/ /tmp/rpms
-RUN rpm-ostree override remove \
-    libfprint \
-    fprintd \
-    fprintd-pam && \
-    rpm-ostree install \
-    /tmp/rpms/libfprint-tod-1.94.5-2.fc41.x86_64.rpm \
-    /tmp/rpms/libfprint-tod-goodix-0.0.9-1.x86_64.rpm && \
-    rpm-ostree install \
-    fprintd \
-    fprintd-pam && \
-    ostree container commit
-    
-#RUN rpm-ostree override replace \
-#    --experimental \
-#        /tmp/rpms/libfprint-tod-1.94.5-2.fc41.x86_64.rpm && \
-#    rpm-ostree override remove libfprint && \
-#    rpm-ostree install /tmp/rpms/libfprint-tod-goodix-0.0.9-1.x86_64.rpm && \
-#    ostree container commit
-
-# Goodix fingerprint scanner (disabled because lacking copr for 41)
-#RUN rpm-ostree override replace --experimental --freeze --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod && \
-#    rpm-ostree override remove ulibfprint && \
-#    rpm-ostree install libfprint-tod-goodix && \
-#    ostree container commit
 
 # Install kernel-bazzite & SCX
 COPY --from=bazzite-kernel /tmp/rpms /tmp/bazzite-rpms
