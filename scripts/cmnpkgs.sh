@@ -32,7 +32,8 @@ rpm-ostree override replace --experimental \
 bootc \
 rpm-ostree \
 rpm-ostree-libs \
-ublue-update
+ublue-update \
+gnome-shell-extension-bazzite-menu
 
 # Pop in Bazzite patched stuff
 rpm-ostree override replace --experimental \
