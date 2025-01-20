@@ -27,6 +27,13 @@ xhost
 # mutter \
 # mutter-common
 
+rpm-ostree override replace --experimental \
+--from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite \
+bootc \
+rpm-ostree \
+rpm-ostree-libs \
+ublue-update
+
 # Pop in Bazzite patched stuff
 rpm-ostree override replace --experimental \
 --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib \
